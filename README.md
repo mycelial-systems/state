@@ -31,7 +31,7 @@ Helpful pieces for application state.
 ## Install
 
 ```sh
-npm i -S @substrate-system/package
+npm i -S @substrate-system/state
 ```
 
 ## Example
@@ -106,7 +106,7 @@ import {
 
 ### Common JS
 ```js
-require('@substrate-system/package/module')
+require('@substrate-system/state')
 ```
 
 ### pre-built JS
