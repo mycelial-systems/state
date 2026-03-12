@@ -45,7 +45,7 @@ test('RequestState.error', t => {
     const testError = new Error('Request failed')
     RequestState.error(req, testError)
     t.equal(req.value.pending, false, 'pending should be false')
-    t.equal(req.value.data, 'some data', 'data should be preserved')
+    t.equal(req.value.data, null, 'data should be null')
     t.equal(req.value.error, testError, 'error should be set')
 })
 
