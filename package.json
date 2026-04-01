@@ -51,7 +51,7 @@
   "devDependencies": {
     "@preact/preset-vite": "^2.10.2",
     "@substrate-system/debug": "^0.9.54",
-    "@substrate-system/tapout": "^0.0.35",
+    "@substrate-system/tapout": "^0.0.37",
     "@substrate-system/tapzero": "^0.10.16",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
@@ -65,8 +65,8 @@
     "preact": "^10.27.0",
     "tap-spec": "^5.0.0",
     "typedoc": "^0.28.9",
-    "typescript": "^5.9.3",
-    "vite": "^7.3.1"
+    "typescript": "^6.0.2",
+    "vite": "^8.0.3"
   },
   "keywords": [
     "state",
