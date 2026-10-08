@@ -18,7 +18,7 @@ export function RequestState<T=any, E=Error> (init?:T):RequestFor<T, E> {
 RequestState.start = function<T=any, E=HTTPError> (
     req:Signal<RequestFor<T, E>>
 ) {
-    req.value = { ...req.value, pending: true }
+    req.value = { ...req.value, pending: true, error: null }
 }
 
 RequestState.error = function<T=any, E=HTTPError> (

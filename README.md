@@ -59,8 +59,14 @@ set(myRequest, 'abc')
 // { data: 'abc', error: null, pending: false }
 
 error(myRequest, new Error('ok'))
-// { data: 'abc', error: Error, pending: false }
+// { data: null, error: Error, pending: false }
+
+start(myRequest)
+// { data: null, error: null, pending: true }
 ```
+
+`set` and `error` always end the request (`pending: false`). `start`
+clears any previous error and keeps the current data.
 
 ### With Signals
 

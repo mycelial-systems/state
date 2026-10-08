@@ -32,6 +32,14 @@ test('RequestState.start preserves existing data', t => {
     t.equal(req.value.data, 'existing data', 'data should be preserved')
 })
 
+test('RequestState.start clears a previous error', t => {
+    const req = signal(RequestState<string>())
+    RequestState.error(req, new Error('Previous error'))
+    RequestState.start(req)
+    t.equal(req.value.pending, true, 'pending should be true')
+    t.equal(req.value.error, null, 'error should be cleared')
+})
+
 test('RequestState.error sets error on the request', t => {
     const req = signal(RequestState<string>())
     const testError = new Error('Test error')
@@ -114,7 +122,7 @@ test('Retry scenario: error -> start -> set', t => {
 
     // Retry
     RequestState.start(req)
-    t.ok(req.value.error, 'error should still be present after start')
+    t.equal(req.value.error, null, 'error should be cleared by start')
 
     // Success
     RequestState.set(req, 'success')
